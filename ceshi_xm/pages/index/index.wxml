@@ -1,0 +1,52 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+<view class="container page">
+  <view class='form_title'>
+    表单提交
+  </view>
+  <view class="bd_01">
+    <form bindsubmit='submitForm'>
+      <view class='bd_content'>
+        <view class='bd_item'>
+          <view class='bd_item_lf'>姓名</view>
+          <view class='bd_item_rt'><input name="name" value="{{form.name}}" placeholder='请输入姓名' type='text' value='' ></input></view>
+        </view>
+        <view class='bd_item'>
+          <view class='bd_item_lf'>电话</view>
+          <view class='bd_item_rt'><input name="tel" value="{{form.tel}}"  placeholder='请输入电话' type='number' value=''></input></view>
+        </view>
+        <view class='bd_item'>
+          <view class='bd_item_lf'>年龄</view>
+          <view class='bd_item_rt'><input name="age" value="{{form.age}}" placeholder='请输入年龄' type='number' value=''></input></view>
+        </view>
+        <view class='bd_item bd_items'>
+          <view class='bd_xb clear'>请选择性别</view>
+          <radio-group bindchange="radioChange" name="gender" role="radiogroup">
+            <label role="radio" wx:for="{{ radio }}" wx:key="{{ item.value }}">
+              <radio value='male' role="radio" value="{{ item.value }}" checked="{{ item.checked }}"/>
+              <view>{{ item.name }}</view>
+            </label>
+            <!-- <label role="radio" aria-disabled='false' aria-checked='flase'>
+              <radio value='female' role="radio" aria-disabled='false' aria-checked='flase'></radio>
+              <view>女</view>
+            </label> -->
+          </radio-group>
+        </view>
+      </view>
+      <view class="button-sp-area">
+          <button class="weui-btn" type="primary" formType="submit">提交</button>
+      </view>
+    </form>
+  </view>
+</view>
